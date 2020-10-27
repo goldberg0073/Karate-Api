@@ -49,7 +49,7 @@ Feature: Jsonplaceholder api testing
     Then status 200
     * match response == {"userId": '#number',"id": '#number',"title": '#string'}
 
-
+@
     Scenario: fuzzy matching value types
       Given path "albums/1"
       When method get

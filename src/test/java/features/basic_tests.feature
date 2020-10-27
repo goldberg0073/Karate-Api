@@ -4,11 +4,12 @@ Feature: Basic zippo tests
   # verify status and header
   Scenario: test status
     Given url 'http://api.zippopotam.us/us/22031'
-    When method post
-    Then status 200
+    When method get
+    Then status 201
     * match header Content-Type == 'application/json'
 
 #  @run
+
   Scenario: send header
     Given url 'http://api.zippopotam.us/us/22031'
     * header Accept = "application/json"
@@ -22,7 +23,7 @@ Feature: Basic zippo tests
     * print "hello world", " one more time"
     * def name = "insert boss"
     * print name
-    * print "hello" + name
+    * print "hello " + name
     * print 1 + 1
 
 #  @run
@@ -32,4 +33,5 @@ Feature: Basic zippo tests
     Then print "PRINTING RESPONSE"
     Then print response
     * print response.country
+    * print response.places
     * match response.country == 'United States'

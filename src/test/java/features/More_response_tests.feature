@@ -8,6 +8,7 @@ Feature: Jsonplaceholder api testing
     Given path "albums/1"
     When method get
     Then status 200
+    * print response
     * match response.id == 1
 
 #    @run
@@ -48,7 +49,7 @@ Feature: Jsonplaceholder api testing
     Then status 200
     * match response == {"userId": '#number',"id": '#number',"title": '#string'}
 
-
+  @hisham
     Scenario: fuzzy matching value types
       Given path "albums/1"
       When method get
